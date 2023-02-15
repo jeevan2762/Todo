@@ -1,53 +1,54 @@
-# Project Name
+Requirements:
 
-	Project description.
+	* User should be able to add their Todo in the input box.
 
-## Keys
+	* The add button should be disabled till something is entered in the input box.
 
-* A short list of things to understand the package, better.
+	* User should be able to delete the Todo.
 
-## Notes
+	* User should be able to select the Todo.
 
-* Though pnpm is the preferred package manager, package-lock is still kept to widen support.
+	* User should be able to toggle all Todo at once by clicking on select all.
 
-## Usage
-### Setup
-#### Linux / Mac
-```sh
-$ git clone https://github.com/Laufire/react-starter.git project-name
-$ cd project-name
-$ sh ./adopt.sh
-$ sh ./setup.sh
-```
+	* User should be able to delete all the Todo.
 
-#### Windows
-```sh
-C:\> git clone https://github.com/Laufire/react-starter.git project-name
-C:\> cd project-name
-C:\> .\adopt.bat
-```
+	* User should be able to edit the Todo.
 
-### Development
-#### Linux, Windows & Mac
-```
-$ # Run all tests.
-$  pnpm run test-dev
+	* All Todo should be displayed in the all tab, and if the Todo is marked as completed, it should be displayed in completed tab and others should be displayed in active tab.
 
-$ # Run a particular test (matching the given pattern).
-$ pnpm run test-dev -- --testPathPattern "target"
+Approach:
 
-$ # Run all tests with coverage.
-$  pnpm run test-ci
-```
+	Step-1:
 
-## ToDo
+	* Introduce an inputbox and add button.
+	* Disable the add button till something is entered in textbox.
+	* Onclick of the add button the Todo should be added in the all tab.
 
-* Have branches to allow for multiple templates.
-	* One for a clean one to start new projects.
-	* One with basic examples.
+Step-2:
 
-* Audit the packages. It's not done, yet. Due to poor understanding of the dependencies.
+	* Each Todo should have a delete button.
+	* If the delete button is clicked the Todo should be removed from the tab.
 
-* Try moving away from create-react-app, as it introduces a lot of constraints, including reconfiguring jest.
+Step-3:
 
-* Think of replacing npm with pnpm.
+	* Each Todo should have a checkBox to select the Todo.
+
+Step-4:
+
+	* Introduce select all button. onclicking the select all button all the Todo in the list(all tab) should be selected.
+
+Step-5:
+
+	* Delete all button should be introduced. On clicking the delete all button all the Todo should get deleted.
+
+Step-6:
+
+	* If the name of the Todo is clicked, title of the selected Todo should be displayed in the inputbox and the add button should change to update button.
+
+	* If the update button is clicked the existing name of the selected Todo should change to current name in the input box.
+
+Step-7:
+
+	* Introduce 3 tabs.All, active and completed.
+
+	* In All tab,all Todo should be displayed.In active tab the unselected Todo from All tab will be displayed and in completed tab the selected Todo should be displayed.
