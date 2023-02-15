@@ -1,9 +1,11 @@
 import { React } from 'react';
 import './App.scss';
+import { Box } from '@mui/material';
+import Input from './components/Input';
 
 const App = () =>
-	<div className="App">
-		Ready to start.
-	</div>;
+	<Box>
+		<Input/>
+	</Box>;
 
 export default App;
