@@ -10,7 +10,7 @@ const Input = (context) => {
 		<TextField
 			variant="outlined"
 			size="small"
-			placeholder="search"
+			placeholder="Enter To-Do"
 			value={ initialText }
 			onChange={ (event) => setState({
 				...state,
