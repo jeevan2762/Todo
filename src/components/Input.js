@@ -10,7 +10,8 @@ const Input = (context) => {
 		<TextField
 			variant="outlined"
 			size="small"
-			defaultValue={ initialText }
+			placeholder="search"
+			value={ initialText }
 			onChange={ (event) => setState({
 				...state,
 				initialText: event.target.value,

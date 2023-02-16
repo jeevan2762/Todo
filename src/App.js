@@ -4,7 +4,7 @@ import { Box } from '@mui/material';
 import Input from './components/Input';
 
 const initialState = {
-	initialText: 'jee',
+	initialText: '',
 	list: [],
 };
 
