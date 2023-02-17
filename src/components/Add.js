@@ -1,10 +1,10 @@
 import { Button } from '@mui/material';
 import React from 'react';
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
-import { rndString } from '@laufire/utils/random';
+import TodoManager from '../services/TodoManager';
 
 const Add = (context) => {
-	const { state: { initialText, list }, config: { idLength }} = context;
+	const { state: { initialText, list }} = context;
 	const {	state, setState } = context;
 
 	return (
@@ -16,8 +16,7 @@ const Add = (context) => {
 			startIcon={ <AddOutlinedIcon/> }
 			onClick={ () => setState({
 				...state,
-				list: [...list, { name: initialText,
-					id: rndString(idLength) }],
+				list: [...list, TodoManager.getNameAndId(context)],
 				initialText: '',
 			}) }
 		>
