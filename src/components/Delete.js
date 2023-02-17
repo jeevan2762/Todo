@@ -9,7 +9,7 @@ const Delete = (context) => {
 	return (
 		<Button
 			variant="text"
-			size="small"
+			size="medium"
 			color="error"
 			startIcon={ <DeleteTwoToneIcon/> }
 			onClick={ () => setState({
