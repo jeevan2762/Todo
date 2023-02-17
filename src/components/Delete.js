@@ -1,13 +1,11 @@
 import { Button } from '@mui/material';
 import React from 'react';
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
-import { peek } from '@laufire/utils/debug';
 
 const removed = (context) => {
 	const { state: { list }, data: ele } = context;
 
-	peek(ele);
-	return list.filter((todo) => peek(todo.id) !== ele.id);
+	return list.filter((todo) => todo.id !== ele.id);
 };
 
 const Delete = (context) => {
