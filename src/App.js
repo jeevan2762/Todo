@@ -4,6 +4,7 @@ import { Box } from '@mui/material';
 import Input from './components/Input';
 import Container from './components/Container';
 import ToggleButton from './components/ToggleButton';
+import Clear from './components/Clear';
 
 const initialState = {
 	initialText: '',
@@ -19,6 +20,7 @@ const App = (context) => {
 		<Input { ...extendedContext }/>
 		<ToggleButton { ...extendedContext }/>
 		<Container { ...extendedContext }/>
+		<Clear { ...extendedContext }/>
 	</Box>;
 };
 
