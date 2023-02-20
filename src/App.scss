@@ -11,8 +11,15 @@
 }
 
 .container{
+	position: relative;
+	top: 150px;
 	display: flex;
-	justify-content: center;
 	font-size: large;
+	justify-content: center;
+	align-items: center;
+}
+
+.displayTodo {
+	display: flex;
 	align-items: center;
 }

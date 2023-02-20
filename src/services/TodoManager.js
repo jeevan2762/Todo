@@ -1,3 +1,4 @@
+import { peek } from '@laufire/utils/debug';
 import { rndString } from '@laufire/utils/random';
 
 const removeTodo = (context) => {
@@ -14,9 +15,19 @@ const getNameAndId = (context) => {
 		isChecked: false };
 };
 
+const editName = (context) => {
+	const { state: { initialText, list }, data: { todo }} = context;
+
+	peek(todo);
+	return list.map((ele) => (ele.id === todo.id
+		? { ...ele, name: initialText }
+		: ele));
+};
+
 const TodoManager = {
 	removeTodo,
 	getNameAndId,
+	editName,
 };
 
 export default TodoManager;

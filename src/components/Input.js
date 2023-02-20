@@ -1,7 +1,6 @@
 import { Box, TextField } from '@mui/material';
 import React from 'react';
 import Add from './Add';
-import Container from './Container';
 
 const Input = (context) => {
 	const { state: { initialText }, state, setState } = context;
@@ -18,7 +17,6 @@ const Input = (context) => {
 			}) }
 		/>
 		<Add { ...context }/>
-		<Container { ...context }/>
 	</Box>;
 };
 
