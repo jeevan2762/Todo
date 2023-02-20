@@ -1,6 +1,5 @@
 import { Box } from '@mui/material';
 import React from 'react';
-import TodoManager from '../services/TodoManager';
 
 const Display = (context) => {
 	const { data: { todo }, state, setState } = context;
@@ -9,7 +8,8 @@ const Display = (context) => {
 		<label
 			onClick={ () => setState({
 				...state,
-				edit: [...todo, TodoManager.editName(context)],
+				editTodo: todo,
+				initialText: todo.name,
 			}) }
 		>
 			{todo.name}

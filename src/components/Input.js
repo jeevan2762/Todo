@@ -1,6 +1,5 @@
 import { Box, TextField } from '@mui/material';
 import React from 'react';
-import Add from './Add';
 
 const Input = (context) => {
 	const { state: { initialText }, state, setState } = context;
@@ -16,7 +15,6 @@ const Input = (context) => {
 				initialText: event.target.value,
 			}) }
 		/>
-		<Add { ...context }/>
 	</Box>;
 };
 

@@ -7,7 +7,14 @@
 
 .addButton{
 	position: absolute;
-	top: 80%;
+	top: 70px;
+	left: 58%;
+}
+
+.updateButton{
+	position: absolute;
+	top: 70px;
+	left: 58%;
 }
 
 .container{
@@ -21,5 +28,7 @@
 
 .displayTodo {
 	display: flex;
+	flex-direction: row;
 	align-items: center;
 }
+

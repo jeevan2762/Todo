@@ -5,12 +5,18 @@ import Delete from './Delete';
 import Display from './Display';
 
 const DisplayTodo = (context) => {
-	const { data: { todo }} = context;
+	const { state: { list }} = context;
 
-	return <Box className="displayTodo">
-		<CheckBox { ...{ ...context, data: { todo }} }/>
-		<Display { ...{ ...context, data: { todo }} }/>
-		<Delete { ...{ ...context, data: { todo }} }/>
+	return <Box>
+		{list.map((todo, key) =>
+			<Box
+				key={ key }
+				className="displayTodo"
+			>
+				<CheckBox { ...{ ...context, data: { todo }} }/>
+				<Display { ...{ ...context, data: { todo }} }/>
+				<Delete { ...{ ...context, data: { todo }} }/>
+			</Box>)}
 	</Box>;
 };
 
