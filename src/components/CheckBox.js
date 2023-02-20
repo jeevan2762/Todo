@@ -11,8 +11,8 @@ const CheckBox = (context) => {
 			size="medium"
 			onClick={ () => setState({
 				...state,
-				// eslint-disable-next-line max-len
-				list: TodoManager.updateIsChecked({ ...{ ...context, data: { todo }}}),
+				list: TodoManager.updateIsChecked({ ...{ ...context,
+					data: { todo }}}),
 			}) }
 		/>
 	</Box>;
