@@ -7,6 +7,7 @@ const Clear = (context) => {
 
 	return <Box>
 		<Button
+			className="clear"
 			variant="outlined"
 			color="error"
 			onClick={ () => setState({

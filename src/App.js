@@ -18,8 +18,8 @@ const App = (context) => {
 
 	return <Box className="App">
 		<Input { ...extendedContext }/>
-		<Container { ...extendedContext }/>
 		<ToggleButton { ...extendedContext }/>
+		<Container { ...extendedContext }/>
 		<Clear { ...extendedContext }/>
 	</Box>;
 };
