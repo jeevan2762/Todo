@@ -1,3 +1,4 @@
+import { peek } from '@laufire/utils/debug';
 import { rndString } from '@laufire/utils/random';
 
 const removeTodo = (context) => {
@@ -40,12 +41,21 @@ const updateIsChecked = (context) => {
 	});
 };
 
+const selectAll = (context) => {
+	const { state: { list }, value } = context;
+
+	peek(value);
+
+	return list.map((todo) => ({ ...todo, isChecked: value }));
+};
+
 const TodoManager = {
 	removeTodo,
 	getNameAndId,
 	updateName,
 	clearSelected,
 	updateIsChecked,
+	selectAll,
 };
 
 export default TodoManager;

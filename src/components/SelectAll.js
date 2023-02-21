@@ -1,21 +1,18 @@
-import { CheckBox } from '@mui/icons-material';
-import { Box, InputLabel } from '@mui/material';
+import { Box, Checkbox } from '@mui/material';
 import React from 'react';
+import TodoManager from '../services/TodoManager';
 
 const SelectAll = (context) => {
-	const { state: { list }, state, setState } = context;
+	const { state, setState } = context;
 
-	return <Box>
-		<CheckBox
-			variant="contained"
-			color="secondary"
-		/>
-		<InputLabel
-			onClick={ () => setState({
+	return <Box className="saCheckBox">
+		<Checkbox
+			onChange={ ({ target: { checked }}) => setState({
 				...state,
-				list: [...list],
+				list: TodoManager.selectAll({ ...{ ...context,
+					value: checked }}),
 			}) }
-		>SelectAll</InputLabel>
+		/>SelectAll
 	</Box>;
 };
 
