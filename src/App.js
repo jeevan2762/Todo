@@ -3,7 +3,7 @@ import './App.scss';
 import { Box } from '@mui/material';
 import Input from './components/Input';
 import Container from './components/Container';
-import ToggleButton from './components/ToggleButton';
+import ActionButton from './components/ActionButton';
 import Clear from './components/Clear';
 
 const initialState = {
@@ -18,7 +18,7 @@ const App = (context) => {
 
 	return <Box className="App">
 		<Input { ...extendedContext }/>
-		<ToggleButton { ...extendedContext }/>
+		<ActionButton { ...extendedContext }/>
 		<Container { ...extendedContext }/>
 		<Clear { ...extendedContext }/>
 	</Box>;

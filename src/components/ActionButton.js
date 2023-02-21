@@ -2,7 +2,7 @@ import React from 'react';
 import Add from './Add';
 import Update from './Update';
 
-const ToggleButton = (context) => {
+const ActionButton = (context) => {
 	const { state: { editTodo }} = context;
 
 	return editTodo === ''
@@ -10,4 +10,4 @@ const ToggleButton = (context) => {
 		: <Update { ...context }/>;
 };
 
-export default ToggleButton;
+export default ActionButton;
