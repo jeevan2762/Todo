@@ -5,10 +5,10 @@ import Delete from './Delete';
 import Display from './Display';
 
 const DisplayTodo = (context) => {
-	const { state: { list }} = context;
+	const { state: { todoList }} = context;
 
 	return <Box>
-		{list.map((todo, key) =>
+		{todoList.map((todo, key) =>
 			<Box
 				key={ key }
 				className="displayTodo"

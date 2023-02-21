@@ -11,7 +11,7 @@ const CheckBox = (context) => {
 			size="medium"
 			onClick={ () => setState({
 				...state,
-				list: TodoManager.updateIsChecked({ ...{ ...context,
+				todoList: TodoManager.updateIsChecked({ ...{ ...context,
 					data: { todo }}}),
 			}) }
 		/>

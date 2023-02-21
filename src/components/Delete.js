@@ -14,7 +14,7 @@ const Delete = (context) => {
 			startIcon={ <DeleteTwoToneIcon/> }
 			onClick={ () => setState({
 				...state,
-				list: TodoManager.removeTodo(context),
+				todoList: TodoManager.removeTodo(context),
 			}) }
 		/>);
 };

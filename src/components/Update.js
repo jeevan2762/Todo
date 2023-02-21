@@ -11,7 +11,7 @@ const Update = (context) => {
 			variant="outlined"
 			onClick={ () => setState({
 				...state,
-				list: TodoManager.updateName(context),
+				todoList: TodoManager.updateName(context),
 				editTodo: '',
 				initialText: '',
 			}) }

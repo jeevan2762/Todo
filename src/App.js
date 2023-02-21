@@ -8,7 +8,7 @@ import Clear from './components/Clear';
 
 const initialState = {
 	initialText: '',
-	list: [],
+	todoList: [],
 	editTodo: '',
 };
 

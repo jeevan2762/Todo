@@ -4,7 +4,7 @@ import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import TodoManager from '../services/TodoManager';
 
 const Add = (context) => {
-	const { state: { initialText, list }} = context;
+	const { state: { initialText, todoList }} = context;
 	const {	state, setState } = context;
 
 	return (
@@ -16,7 +16,7 @@ const Add = (context) => {
 			startIcon={ <AddOutlinedIcon/> }
 			onClick={ () => setState({
 				...state,
-				list: [...list, TodoManager.getTodo(context)],
+				todoList: [...todoList, TodoManager.getTodo(context)],
 				initialText: '',
 			}) }
 		>

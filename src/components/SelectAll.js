@@ -9,7 +9,7 @@ const SelectAll = (context) => {
 		<Checkbox
 			onClick={ ({ target: { checked }}) => setState({
 				...state,
-				list: TodoManager.toggleAll({ ...{ ...context,
+				todoList: TodoManager.toggleAll({ ...{ ...context,
 					data: checked }}),
 			}) }
 		/>SelectAll

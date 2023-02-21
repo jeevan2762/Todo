@@ -12,7 +12,7 @@ const Clear = (context) => {
 			color="error"
 			onClick={ () => setState({
 				...state,
-				list: TodoManager.clearSelected(context),
+				todoList: TodoManager.clearSelected(context),
 			}) }
 		>Clear</Button>
 	</Box>;
