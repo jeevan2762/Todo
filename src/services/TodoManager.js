@@ -10,6 +10,8 @@ const getTodo = ({ state: { initialText }, config: { idLength }}) => (
 		isChecked: false,
 	});
 
+const getAction = ({ state: { editTodo }}) => editTodo === '';
+
 const updateName = ({ state: { initialText, todoList, editTodo: todo }}) =>
 	todoList.map((todoItem) => (todoItem.id === todo.id
 		? { ...todoItem, name: initialText }
@@ -40,6 +42,7 @@ const TodoManager = {
 	clearSelected,
 	updateIsChecked,
 	toggleAll,
+	getAction,
 };
 
 export default TodoManager;
