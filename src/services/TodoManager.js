@@ -1,13 +1,9 @@
-import { peek } from '@laufire/utils/debug';
 import { rndString } from '@laufire/utils/random';
 
-const removeTodo = (context) => {
-	const { state: { list }, data: { todo: { id }}} = context;
+const removeTodo = ({ state: { list }, data: { todo: { id }}}) =>
+	list.filter((todo) => todo.id !== id);
 
-	return list.filter((todo) => todo.id !== id);
-};
-
-const getNameAndId = (context) => {
+const getTodo = (context) => {
 	const { state: { initialText }, config: { idLength }} = context;
 
 	return { id: rndString(idLength),
@@ -18,15 +14,15 @@ const getNameAndId = (context) => {
 const updateName = (context) => {
 	const { state: { initialText, list, editTodo: todo }} = context;
 
-	return list.map((ele) => (ele.id === todo.id
-		? { ...ele, name: initialText }
-		: ele));
+	return list.map((todoItem) => (todoItem.id === todo.id
+		? { ...todoItem, name: initialText }
+		: todoItem));
 };
 
 const clearSelected = (context) => {
 	const { state: { list }} = context;
 
-	return list.filter((todo) => todo.isChecked === false);
+	return list.filter((todo) => !todo.isChecked);
 };
 
 const updateIsChecked = (context) => {
@@ -41,21 +37,19 @@ const updateIsChecked = (context) => {
 	});
 };
 
-const selectAll = (context) => {
-	const { state: { list }, value } = context;
+const toggleAll = (context) => {
+	const { state: { list }, data } = context;
 
-	peek(value);
-
-	return list.map((todo) => ({ ...todo, isChecked: value }));
+	return list.map((todo) => ({ ...todo, isChecked: data }));
 };
 
 const TodoManager = {
 	removeTodo,
-	getNameAndId,
+	getTodo,
 	updateName,
 	clearSelected,
 	updateIsChecked,
-	selectAll,
+	toggleAll,
 };
 
 export default TodoManager;

@@ -7,10 +7,10 @@ const SelectAll = (context) => {
 
 	return <Box className="saCheckBox">
 		<Checkbox
-			onChange={ ({ target: { checked }}) => setState({
+			onClick={ ({ target: { checked }}) => setState({
 				...state,
-				list: TodoManager.selectAll({ ...{ ...context,
-					value: checked }}),
+				list: TodoManager.toggleAll({ ...{ ...context,
+					data: checked }}),
 			}) }
 		/>SelectAll
 	</Box>;
