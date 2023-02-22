@@ -14,7 +14,7 @@ const Clear = (context) => {
 				...state,
 				todoList: TodoManager.clearSelected(context),
 			}) }
-		>Clear</Button>
+		>Clear Completed</Button>
 	</Box>;
 };
 
