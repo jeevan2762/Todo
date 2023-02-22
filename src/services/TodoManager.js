@@ -10,7 +10,7 @@ const getTodo = ({ state: { initialText }, config: { idLength }}) => (
 		isChecked: false,
 	});
 
-const getAction = ({ state: { editTodo }}) => editTodo === '';
+const isEmpty = ({ data }) => data === '';
 
 const updateName = ({ state: { initialText, todoList, editTodo: todo }}) =>
 	todoList.map((todoItem) => (todoItem.id === todo.id
@@ -35,7 +35,7 @@ const updateIsChecked = (context) => {
 const toggleAll = ({ state: { todoList }, data }) =>
 	todoList.map((todo) => ({ ...todo, isChecked: data }));
 
-const getSelected = ({ state: { todoList }}) =>
+const isAllTodoSelected = ({ state: { todoList }}) =>
 	todoList.length && todoList.every((todo) => todo.isChecked);
 
 const TodoManager = {
@@ -45,8 +45,8 @@ const TodoManager = {
 	clearSelected,
 	updateIsChecked,
 	toggleAll,
-	getAction,
-	getSelected,
+	isEmpty,
+	isAllTodoSelected,
 };
 
 export default TodoManager;

@@ -11,7 +11,8 @@ const Add = (context) => {
 		<Button
 			className="addButton"
 			variant="outlined"
-			disabled={ initialText === '' }
+			disabled={ TodoManager.isEmpty({ ...{ ...context,
+				data: initialText }}) }
 			size="small"
 			startIcon={ <AddOutlinedIcon/> }
 			onClick={ () => setState({
