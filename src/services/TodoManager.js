@@ -35,6 +35,9 @@ const updateIsChecked = (context) => {
 const toggleAll = ({ state: { todoList }, data }) =>
 	todoList.map((todo) => ({ ...todo, isChecked: data }));
 
+const getSelected = ({ state: { todoList }}) =>
+	todoList.length && todoList.every((todo) => todo.isChecked);
+
 const TodoManager = {
 	removeTodo,
 	getTodo,
@@ -43,6 +46,7 @@ const TodoManager = {
 	updateIsChecked,
 	toggleAll,
 	getAction,
+	getSelected,
 };
 
 export default TodoManager;
