@@ -1,4 +1,3 @@
-import { peek } from '@laufire/utils/debug';
 import { rndString } from '@laufire/utils/random';
 
 const removeTodo = ({ state: { todoList }, data: { todo: { id }}}) =>
@@ -39,8 +38,7 @@ const toggleAll = ({ state: { todoList }, data }) =>
 const isAllTodoSelected = ({ state: { todoList }}) =>
 	todoList.length && todoList.every((todo) => todo.isChecked);
 
-const getLength = ({ state: { todoList }}) =>
-	peek(todoList.length === 0);
+const getLength = ({ state: { todoList }}) =>	todoList.length === 0;
 
 const TodoManager = {
 	removeTodo,
