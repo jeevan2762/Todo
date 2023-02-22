@@ -9,6 +9,7 @@ const initialState = {
 	initialText: '',
 	todoList: [],
 	editTodo: '',
+	filter: 'all',
 };
 
 const App = (context) => {

@@ -19,7 +19,7 @@
 
 .container{
 	position: relative;
-	top: 110px;
+	top: 150px;
 	display: flex;
 	font-size: large;
 	justify-content: center;
@@ -48,4 +48,10 @@
 	position: absolute;
 	top: -30px;
 	left: 600px;
+}
+
+.filterButtons{
+	position: absolute;
+	top: -65px;
+	left: 535px;
 }
