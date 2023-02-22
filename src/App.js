@@ -2,9 +2,8 @@ import { React, useState } from 'react';
 import './App.scss';
 import { Box } from '@mui/material';
 import Input from './components/Input';
-import Container from './components/Container';
 import ActionButton from './components/ActionButton';
-import Clear from './components/Clear';
+import TodoContainer from './components/TodoContainer';
 
 const initialState = {
 	initialText: '',
@@ -19,8 +18,7 @@ const App = (context) => {
 	return <Box className="App">
 		<Input { ...extendedContext }/>
 		<ActionButton { ...extendedContext }/>
-		<Container { ...extendedContext }/>
-		<Clear { ...extendedContext }/>
+		<TodoContainer { ...extendedContext }/>
 	</Box>;
 };
 
