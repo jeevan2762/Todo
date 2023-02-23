@@ -3,7 +3,7 @@ import './App.scss';
 import { Box } from '@mui/material';
 import Input from './components/Input';
 import ActionButton from './components/ActionButton';
-import TodoContainer from './components/TodoContainer';
+import Container from './components/Container';
 
 const initialState = {
 	initialText: '',
@@ -15,11 +15,12 @@ const initialState = {
 const App = (context) => {
 	const [state, setState] = useState(initialState);
 	const extendedContext = { ...context, state, setState };
+	const { state: { todoList }} = extendedContext;
 
 	return <Box className="App">
 		<Input { ...extendedContext }/>
 		<ActionButton { ...extendedContext }/>
-		<TodoContainer { ...extendedContext }/>
+		{Boolean(todoList.length) && <Container { ...extendedContext }/>}
 	</Box>;
 };
 

@@ -1,14 +1,14 @@
 import { Box } from '@mui/material';
 import { React } from 'react';
-import Active from './Active';
-import All from './All';
-import Completed from './Completed';
+import Filters from './Filters';
 
-const FilterButtons = (context) =>
-	<Box className="filterButtons">
-		<All { ...context }/>
-		<Active { ...context }/>
-		<Completed { ...context }/>
+const FilterButtons = (context) => {
+	const { config: { filters }} = context;
+
+	return <Box className="filterButtons">
+		{filters.map((filter, key) =>
+			<Filters key={ key }{ ...{ ...context, data: filter } }/>)}
 	</Box>;
+};
 
 export default FilterButtons;

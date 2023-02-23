@@ -10,7 +10,7 @@ const Clear = (context) => {
 			className="clear"
 			variant="outlined"
 			color="error"
-			disabled={ !TodoManager.isClearCompDisabled(context) }
+			disabled={ !TodoManager.isAnyTodoChecked(context) }
 			onClick={ () => setState({
 				...state,
 				todoList: TodoManager.clearSelected(context),

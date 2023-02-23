@@ -42,13 +42,12 @@ const getLength = ({ state: { todoList }}) =>	todoList.length;
 
 const filter = {
 	all: ({ state: { todoList }}) => todoList,
-	active: ({ state: { todoList }}) => todoList.filter((todo) =>
-		!todo.isChecked),
+	active: (context) => clearSelected(context),
 	completed: ({ state: { todoList }}) => todoList.filter((todo) =>
 		todo.isChecked),
 };
 
-const isClearCompDisabled = ({ state: { todoList }}) =>
+const isAnyTodoChecked = ({ state: { todoList }}) =>
 	todoList.some((todo) => todo.isChecked);
 
 const TodoManager = {
@@ -62,7 +61,7 @@ const TodoManager = {
 	isAllTodoSelected,
 	getLength,
 	filter,
-	isClearCompDisabled,
+	isAnyTodoChecked,
 };
 
 export default TodoManager;
