@@ -36,9 +36,9 @@ const toggleAll = ({ state: { todoList }, data }) =>
 	todoList.map((todo) => ({ ...todo, isChecked: data }));
 
 const isAllTodoSelected = ({ state: { todoList }}) =>
-	todoList.length && todoList.every((todo) => todo.isChecked);
+	todoList.every((todo) => todo.isChecked);
 
-const getLength = ({ state: { todoList }}) =>	todoList.length === 0;
+const getLength = ({ state: { todoList }}) =>	todoList.length;
 
 const filter = {
 	all: ({ state: { todoList }}) => todoList,
@@ -47,6 +47,9 @@ const filter = {
 	completed: ({ state: { todoList }}) => todoList.filter((todo) =>
 		todo.isChecked),
 };
+
+const isClearCompDisabled = ({ state: { todoList }}) =>
+	todoList.some((todo) => todo.isChecked);
 
 const TodoManager = {
 	removeTodo,
@@ -59,6 +62,7 @@ const TodoManager = {
 	isAllTodoSelected,
 	getLength,
 	filter,
+	isClearCompDisabled,
 };
 
 export default TodoManager;
