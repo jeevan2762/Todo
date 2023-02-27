@@ -2,56 +2,56 @@
 .input{
 	position: absolute;
 	top: 10%;
-	left: 40%;
+	left: 10%;
 }
 
 .addButton{
 	position: absolute;
 	top: 70px;
-	left: 58%;
+	left: 28%;
 }
 
 .updateButton{
 	position: absolute;
 	top: 70px;
-	left: 58%;
+	left: 28%;
 }
 
 .container{
 	position: relative;
 	top: 150px;
+	left: 170px;
 	display: flex;
 	font-size: large;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 }
 
 .displayTodo {
 	display: flex;
-	flex-direction: row;
 	align-items: center;
 	margin-top: 15px;
 }
 
 .clear{
 	top: 150px;
-	left: -110px;
+	left: -190px;
 }
 
 .selectAll{
 	position: absolute;
 	top: 2px;
-	left: 650px;
+	left: 150px;
 }
 
 .saCheckBox{
 	position: absolute;
 	top: -30px;
-	left: 600px;
+	left: 10px;
 }
 
 .filterButtons{
 	position: absolute;
 	top: -65px;
-	left: 535px;
+	left: -30px;
 }
