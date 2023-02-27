@@ -55,3 +55,24 @@
 	top: -65px;
 	left: -30px;
 }
+
+.taskContainer {
+	position:relative;
+	top: 100px;
+	left: 800px;
+	display: flex;
+	justify-content: left;
+	align-items: center;
+}
+
+.taskHeading {
+	position: absolute;
+	top: 3%;
+	left: 64%;
+}
+
+.todoHeading {
+	position: absolute;
+	top: 1%;
+	left: 16%;
+}

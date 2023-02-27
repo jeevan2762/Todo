@@ -50,11 +50,6 @@ const filter = {
 const isAnyTodoChecked = ({ state: { todoList }}) =>
 	todoList.some((todo) => todo.isChecked);
 
-const getTask = ({ config: { tasks, idLength }}) => tasks.map((task) => ({
-	...task,
-	id: rndString(idLength),
-}));
-
 const TodoManager = {
 	removeTodo,
 	getTodo,
@@ -67,7 +62,6 @@ const TodoManager = {
 	getLength,
 	filter,
 	isAnyTodoChecked,
-	getTask,
 };
 
 export default TodoManager;
