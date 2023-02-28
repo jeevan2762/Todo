@@ -15,7 +15,8 @@ const Add = (context) => {
 			startIcon={ <AddOutlinedIcon/> }
 			onClick={ () => setState({
 				...state,
-				todoList: [...todoList, task],
+				todoList: [...todoList, TaskManager
+					.getIdAndIsChecked({ ...context, data: task })],
 				tasks: TaskManager.removeTask(context),
 				initialText: '',
 			}) }

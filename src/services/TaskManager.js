@@ -4,6 +4,11 @@ const addFields = ({ config: { idLength }, data: task }) => ({
 	...task,
 	id: rndString(idLength),
 	name: task,
+});
+
+const getIdAndIsChecked = ({ config: { idLength }, data: task }) => ({
+	id: rndString(idLength),
+	name: task.name,
 	isChecked: false,
 });
 
@@ -43,6 +48,7 @@ const TaskManager = {
 	removeTask,
 	getTask,
 	generateTasks,
+	getIdAndIsChecked,
 };
 
 export default TaskManager;
