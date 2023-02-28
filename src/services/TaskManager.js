@@ -2,8 +2,8 @@ import { rndString, rndValue } from '@laufire/utils/random';
 
 const addFields = ({ config: { idLength }, data: task }) => ({
 	...task,
-	name: task,
 	id: rndString(idLength),
+	name: task,
 	isChecked: false,
 });
 
@@ -19,15 +19,23 @@ const removeTask = (context) => {
 	return tasks.filter((task) => task.id !== id);
 };
 
-const generateTasks = (context) => {
-	const { setState, config: { tasks, taskLength, timeDelay }} = context;
+const getRandomTasks = (context) => {
+	const { data: { state }, config: { tasks, taskLength }} = context;
 
-	return setInterval(() => setState((state) => ({
+	return state.tasks.length < taskLength
+		? [...state.tasks, addFields({
+			...context,
+			data: rndValue(tasks),
+		})]
+		: state.tasks;
+};
+
+const generateTasks = (context) => {
+	const { setState, config: { timeDelay }} = context;
+
+	setInterval(() => setState((state) => ({
 		...state,
-		tasks: state.tasks.length < taskLength
-			? [...state.tasks, addFields({ ...context,
-				data: rndValue(tasks) })]
-			: state.tasks,
+		tasks: getRandomTasks({ ...context, data: { state }}),
 	})), timeDelay);
 };
 
