@@ -1,10 +1,17 @@
-import { rndString } from '@laufire/utils/random';
+import { rndString, rndValue } from '@laufire/utils/random';
 
-const getTask = ({ config: { tasks, idLength }}) => tasks.map((task) => ({
+const addFields = ({ config: { idLength }, data: task }) => ({
 	...task,
+	name: task,
 	id: rndString(idLength),
 	isChecked: false,
-}));
+});
+
+const getTask = (context) => {
+	const { config: { tasks }} = context;
+
+	return tasks.map((task) => addFields({ ...{ ...context, data: task }}));
+};
 
 const removeTask = (context) => {
 	const { state: { tasks }, data: { task: { id }}} = context;
@@ -12,9 +19,22 @@ const removeTask = (context) => {
 	return tasks.filter((task) => task.id !== id);
 };
 
+const generateTasks = (context) => {
+	const { setState, config: { tasks, taskLength, timeDelay }} = context;
+
+	return setInterval(() => setState((state) => ({
+		...state,
+		tasks: state.tasks.length < taskLength
+			? [...state.tasks, addFields({ ...context,
+				data: rndValue(tasks) })]
+			: state.tasks,
+	})), timeDelay);
+};
+
 const TaskManager = {
 	removeTask,
 	getTask,
+	generateTasks,
 };
 
 export default TaskManager;

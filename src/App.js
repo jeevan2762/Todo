@@ -4,25 +4,26 @@ import { Box } from '@mui/material';
 import Input from './components/Input';
 import ActionButton from './components/ActionButton';
 import Container from './components/Container';
-import { peek } from '@laufire/utils/debug';
 import TaskContainer from './components/Tasks/TaskContainer';
 import Headings from './components/Headings';
 import TaskManager from './services/TaskManager';
 
-const initialState = (context) => ({
+const initialState = {
 	initialText: '',
 	todoList: [],
 	editTodo: '',
 	filter: 'all',
-	tasks: TaskManager.getTask(context),
-});
+	tasks: [],
+};
 
 const App = (context) => {
-	const [state, setState] = useState(initialState(context));
+	const [state, setState] = useState(initialState);
 	const extendedContext = { ...context, state, setState };
-	const { state: { todoList, tasks }} = extendedContext;
+	const { state: { todoList }} = extendedContext;
+	const { once } = context;
 
-	peek(tasks);
+	once(() => TaskManager.generateTasks(extendedContext));
+
 	return <Box className="App">
 		<Headings/>
 		<Input { ...extendedContext }/>
