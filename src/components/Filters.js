@@ -6,6 +6,7 @@ const Filters = (context) => {
 
 	return (
 		<Button
+			className="filterButtons"
 			variant="text"
 			onClick={ () => setState({
 				...state,

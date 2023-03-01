@@ -9,7 +9,6 @@ const Add = (context) => {
 
 	return (
 		<Button
-			className="taskAddButton"
 			variant="outlined"
 			size="small"
 			startIcon={ <AddOutlinedIcon/> }

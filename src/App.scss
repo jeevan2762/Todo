@@ -18,42 +18,42 @@
 }
 
 .container{
-	position: relative;
-	top: 150px;
-	left: 170px;
-	display: flex;
-	font-size: large;
-	justify-content: flex-start;
-	align-items: center;
+position: absolute;
+left: 100px;
+top: 100px;
 }
 
 .displayTodo {
+	position: relative;
+	top: 50px;
+	left: 50px;
 	display: flex;
 	align-items: center;
-	margin-top: 15px;
+	margin-top: 22px;
 }
 
 .clear{
-	top: 150px;
-	left: -190px;
+	position: absolute;
+	top: 70px;
+	left: 30px;
 }
 
-.selectAll{
+.toggleAll{
 	position: absolute;
-	top: 2px;
+	top: 36px;
 	left: 150px;
 }
 
 .saCheckBox{
 	position: absolute;
-	top: -30px;
-	left: 10px;
+	top: 31px;
+	left: -35px;
 }
 
 .filterButtons{
 	position: absolute;
-	top: -65px;
-	left: -30px;
+	top: 10px;
+	left: 56px;
 }
 
 .taskContainer {

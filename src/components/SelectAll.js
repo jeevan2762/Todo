@@ -5,8 +5,9 @@ import TodoManager from '../services/TodoManager';
 const SelectAll = (context) => {
 	const { state, setState } = context;
 
-	return <Box className="saCheckBox">
+	return <Box className="toggleAll">
 		<Checkbox
+			className="saCheckBox"
 			checked={ TodoManager.isAllTodoSelected(context) }
 			onClick={ ({ target: { checked }}) => setState({
 				...state,

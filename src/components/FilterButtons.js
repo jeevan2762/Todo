@@ -5,7 +5,7 @@ import Filters from './Filters';
 const FilterButtons = (context) => {
 	const { config: { filters }} = context;
 
-	return <Box className="filterButtons">
+	return <Box>
 		{filters.map((filter, key) =>
 			<Filters key={ key }{ ...{ ...context, data: filter } }/>)}
 	</Box>;
