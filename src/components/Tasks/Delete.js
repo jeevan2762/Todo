@@ -1,6 +1,7 @@
 import { Button } from '@mui/material';
 import React from 'react';
-import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
+// eslint-disable-next-line max-len, id-length
+import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
 import TaskManager from '../../services/TaskManager';
 
 const Delete = (context) => {
@@ -11,7 +12,7 @@ const Delete = (context) => {
 			variant="text"
 			size="medium"
 			color="error"
-			startIcon={ <DeleteTwoToneIcon/> }
+			startIcon={ <DeleteForeverOutlinedIcon/> }
 			onClick={ () => setState({
 				...state,
 				tasks: TaskManager.removeTask(context),

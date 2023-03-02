@@ -8,7 +8,7 @@ import Display from './Display';
 const TaskContainer = (context) => {
 	const { state: { tasks }} = context;
 
-	return <Box>
+	return <Box className="wholeTaskContainer">
 		<Sort { ...context }/>
 		{tasks.map((task, key) =>
 			<Box

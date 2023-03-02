@@ -1,6 +1,6 @@
 import { Button } from '@mui/material';
 import React from 'react';
-import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
+import AddTaskIcon from '@mui/icons-material/AddTask';
 import TaskManager from '../../services/TaskManager';
 
 const Add = (context) => {
@@ -11,7 +11,7 @@ const Add = (context) => {
 		<Button
 			variant="outlined"
 			size="small"
-			startIcon={ <AddOutlinedIcon/> }
+			startIcon={ <AddTaskIcon/> }
 			onClick={ () => setState({
 				...state,
 				todoList: [...todoList, TaskManager
