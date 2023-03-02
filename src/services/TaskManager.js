@@ -4,6 +4,8 @@ const addFields = ({ config: { idLength }, data: task }) => ({
 	...task,
 	id: rndString(idLength),
 	name: task,
+	date: Date.now(),
+	isChecked: false,
 });
 
 const getIdAndIsChecked = ({ config: { idLength }, data: task }) => ({
@@ -44,11 +46,25 @@ const generateTasks = (context) => {
 	})), timeDelay);
 };
 
+const sortByNewest = (context) => {
+	const { state: { tasks }} = context;
+
+	return tasks.sort((a, b) => b.date - a.date);
+};
+
+const sortByOldest = (context) => {
+	const { state: { tasks }} = context;
+
+	return tasks.sort((a, b) => a.date - b.date);
+};
+
 const TaskManager = {
 	removeTask,
 	getTask,
 	generateTasks,
 	getIdAndIsChecked,
+	sortByNewest,
+	sortByOldest,
 };
 
 export default TaskManager;

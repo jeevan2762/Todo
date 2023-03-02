@@ -7,6 +7,7 @@ import Container from './components/Container';
 import TaskContainer from './components/Tasks/TaskContainer';
 import Headings from './components/Headings';
 import TaskManager from './services/TaskManager';
+import { peek } from '@laufire/utils/debug';
 
 const initialState = {
 	initialText: '',
@@ -19,9 +20,10 @@ const initialState = {
 const App = (context) => {
 	const [state, setState] = useState(initialState);
 	const extendedContext = { ...context, state, setState };
-	const { state: { todoList }} = extendedContext;
+	const { state: { todoList, tasks }} = extendedContext;
 	const { once } = context;
 
+	peek(tasks);
 	once(() => TaskManager.generateTasks(extendedContext));
 
 	return <Box className="App">
